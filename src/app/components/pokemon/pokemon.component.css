@@ -1,0 +1,39 @@
+.picture img {
+    width: 100%;
+    transition: all 300ms;
+    max-width: 100%!important;
+    max-height: 100%!important;
+}
+
+.picture {
+    align-items: center;
+    margin-top: 2rem;
+    background-size: cover!important;
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+    border: 0.15rem solid black;
+    box-shadow: 10px 10px 10px rgb(110, 105, 105)!important;
+    border-radius: 25px;
+}
+
+.centered {
+    margin: 0 auto;
+    text-align: center;
+}
+
+div .row {
+    margin: 0 auto;
+}
+
+.a {
+    padding: 0 auto;
+}
+
+.border-details {
+    border: 1px solid black;
+    border-radius: 1rem;
+    box-shadow: 8px 8px 8px rgb(110, 105, 105)!important;
+    background-color: rgb(193, 252, 232);
+}

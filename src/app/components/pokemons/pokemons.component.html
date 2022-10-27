@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h1 style="text-align: center;">
+                Pokemons <small>Ready To Fight!!</small>
+            </h1>
+        </div>
+        <div class="col-3 centered mt-2">
+            <h4> Cantidad de Pokemones:</h4>
+        </div>
+        <div class="col-2 centered">
+            <div class="mt-2">
+                <select id="disabledSelect" class="form-select" [(ngModel)]="totalOfPokemons" (ngModelChange)="getPokemons()">
+                  <option value="100">100</option>
+                  <option value="300">300</option>
+                  <option value="500" >500</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row gy-3 gm-3">
+        <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 100, currentPage: pageNumber, totalItems: totalOfPokemons}; let i = index">
+            <div class="card">
+                <h3 class="tittle-card">&nbsp;{{i+1}}</h3>
+                <img [src]="pokemon.sprites.front_default" alt="image" class="card-img-top">
+                <div class="card-body centered">
+                    <h3 class="card-tittle">{{pokemon.name | titlecase}}</h3>
+                    <p class="card-text">
+
+                    </p>
+                    <button (click)="detailsPokemon(pokemon.name)" type="button" class="btn btn-outline-primary btn-block">
+                        Ver Detalle...
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div>
+    <pagination-controls (pageChange)="pageNumber = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+</div>
